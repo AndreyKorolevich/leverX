@@ -1,0 +1,59 @@
+$bgHeader: #225FBF;
+$ftColor: #FFFFFF;
+$activeColor: #FFFFFF;
+$nonActiveColor: rgba(246, 248, 253, 0.3);
+$bgBtn: #1753B3;
+$bgBlock: #FFFFFF;
+$boxShadow: 0px 1px 3px rgba(32, 75, 146, 0.15);
+
+
+@mixin box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin boxBlock {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin fontNormal {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin fontBold {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin customCursor {
+  cursor: url('../Img/cursor-pointer-2.svg') 10 5, pointer;
+}
+
+@mixin hint($message, $width, $left, $opacity,$index) {
+  content: $message;
+  position: absolute;
+  top: 32px;
+  left: $left;
+  background-color: #000E26;
+  color: $ftColor;
+  border-radius: 4px;
+  opacity: $opacity;
+  box-sizing: border-box;
+  padding: 12px;
+  @include fontNormal;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: none;
+  height: 44px;
+  width: $width;
+  z-index: $index;
+  transition: all 0.4s ease-in-out;
+  transition-delay: 100ms, 0ms;
+  transition-property: left, opacity;
+}

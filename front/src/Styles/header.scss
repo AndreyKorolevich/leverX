@@ -1,0 +1,155 @@
+@import "variables";
+
+.header {
+  background-color: $bgHeader;
+  height: 68px;
+  color: $ftColor;
+  @include fontBold;
+  box-sizing: border-box;
+  border-bottom: 4px solid $bgBtn;
+
+  .wrapper {
+    width: 1200px;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 16px;
+    @include box;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .header-logo {
+    text-transform: uppercase;
+
+    .header-logo__group {
+      font-size: 10px;
+      padding-bottom: 6px;
+      color: #CCDFFF;
+    }
+
+    .header-logo__employee {
+      font-size: 13px;
+    }
+  }
+
+  .nav-list {
+    @include box;
+
+    .nav-item {
+      list-style-type: none;
+      margin-right: 40px;
+      padding: 0 5px;
+      font-size: 13px;
+      line-height: 20px;
+      @include fontBold;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-link {
+      color: $nonActiveColor;
+      @include customCursor;
+    }
+
+    .active {
+      color: $activeColor;
+      transition: color 0.3s ease-in-out;
+
+      &:after {
+        content: '';
+        height: 4px;
+        border-radius: 3px;
+        position: absolute;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        background-color: #5495FF;
+      }
+    }
+  }
+
+  .buttons-group {
+    @include box;
+    align-items: center;
+    width: 236px;
+
+    .btn {
+      background-color: $bgBtn;
+      height: 32px;
+      text-align: center;
+      position: relative;
+
+      &:hover{
+        background-color: #204B92;
+      }
+    }
+
+    .btn:nth-child(1), .btn:nth-child(3) {
+      width: 32px;
+      border-radius: 50%;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: inline-block;
+      }
+    }
+    .btn:nth-child(1) {
+      &:before {
+        @include hint('Submit change request', 154px, -165px, 0, -2)
+      }
+      &:hover{
+        background-color: #204B92;
+        &:before {
+          @include hint('Submit change request', 154px, -130px, 0.9, 2)
+        }
+      }
+    }
+
+    .btn:nth-child(2) {
+      width: 124px;
+      border-radius: 23px;
+      padding: 2px 2px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        @include hint('View my profile page', 141px, -80px,0, -2)
+      }
+
+      &:hover{
+        background-color: #204B92;
+        &:before {
+          @include hint('View my profile page', 141px, -45px, 0.9, 2)
+        }
+      }
+    }
+
+    .btn:nth-child(3) {
+      &:before {
+        @include hint('Log out', 67px, -90px, 0, -2)
+      }
+      &:hover{
+        background-color: #204B92;
+        &:before {
+          @include hint('Log out', 67px, -55px, 0.9, 2)
+        }
+      }
+    }
+
+    .user-avatar {
+      margin-right: 11px;
+    }
+
+    .buttons-group__name {
+      @include fontBold;
+      font-size: 10px;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
+  }
+}

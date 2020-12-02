@@ -1,0 +1,2 @@
+export const SET_REQUESTS = 'SET_REQUESTS';
+export const TOGGLE_LOADER = 'TOGGLE_LOADER';

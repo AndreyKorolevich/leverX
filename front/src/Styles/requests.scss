@@ -1,0 +1,83 @@
+@import "variables";
+
+.block {
+  width: 100%;
+}
+
+.block-header {
+  background-color: #5495FF;
+  color: $ftColor;
+  height: 22px;
+  box-sizing: border-box;
+  padding: 3px 30px;
+  @include fontNormal;
+  font-size: 12px;
+  line-height: 17px;
+
+  .block-header__year {
+    margin-right: 3px;
+  }
+}
+
+.item {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding: 15px 0 19px 26px;
+
+  .item-data-header {
+    @include fontBold;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .item-data-header__type, .item-data-header__date {
+    margin-right: 3px;
+  }
+
+  .item-data {
+    width: 82%;
+  }
+
+  .item-data-main {
+    @include fontNormal;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .item-data-footer__status {
+    @include fontNormal;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 17px;
+    color: #3FAD44;
+    text-transform: capitalize;
+  }
+
+  .logo-item {
+    width: 50px;
+    height: 50px;
+    padding-right: 14px;
+  }
+}
+
+.item-transition {
+  background: none;
+  border: none;
+  height: 100%;
+  outline: none;
+  @include customCursor;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.odd {
+  background-color: $bgBlock;
+}
+
+.parity {
+  background-color: #F6F8FD;
+}

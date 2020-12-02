@@ -1,0 +1,150 @@
+@import "variables";
+
+.main {
+  .wrapper {
+    width: 1200px;
+    @include boxBlock;
+    display: flex;
+    padding-top: 10px;
+  }
+
+  .main-section {
+    margin-right: 10px;
+  }
+
+  .main-section:nth-child(1) {
+    width: 470px;
+  }
+
+  .main-section:nth-child(2) {
+    width: 675px;
+
+    .main-block__name {
+      padding: 0 0 20px 24px;
+    }
+
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #225FBF;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%,
+        color-stop(.5, #225FBF),
+        color-stop(.5, transparent), to(transparent));
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: 5px 5px 5px -5px white inset;
+    }
+  }
+
+  .main-block__name {
+    @include fontBold;
+    line-height: 24px;
+    font-size: 18px;
+    padding-bottom: 11px;
+  }
+
+  .main-block {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background: $bgBlock;
+    box-shadow: $boxShadow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    .availible {
+      @include box;
+      @include fontNormal;
+      line-height: 18px;
+      font-size: 13px;
+      padding-bottom: 10px;
+      color: #333D47;
+    }
+
+    .main-block-header {
+      width: 100%;
+      height: 170px;
+      border-radius: 5px;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 170px;
+        background-color: #F0F0F0;
+        left: -100px;
+        z-index: 99;
+      }
+
+      img {
+        width: 100%;
+        background: $bgBlock;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: 0.5s ease-out 1 backwards vacation;
+        animation-delay: 0.2s;
+      }
+
+      @keyframes vacation {
+        0% {
+          opacity: 0;
+          left: -100px;
+        }
+
+        100% {
+          opacity: 1;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .block-wrapper {
+    padding: 30px;
+  }
+
+  .requests {
+    height: 655px;
+    overflow-y: auto;
+    padding: 20px 0 0 0;
+  }
+
+  .no-requests {
+    width: 260px;
+    @include boxBlock;
+    padding-top: 141px;
+
+    img{
+      width: 240px;
+      height: 200px;
+    }
+
+    .requests-preview {
+      padding-top: 22px;
+      text-align: center;
+    }
+
+    .requests-preview__no-vacation {
+      @include fontBold;
+      font-size: 14px;
+      line-height: 19px;
+      color: #494949;
+      padding-bottom: 6px;
+    }
+
+    .requests-preview__first-request {
+      @include fontNormal;
+      font-size: 13px;
+      line-height: 18px;
+      color: #818D99;
+    }
+  }
+}
